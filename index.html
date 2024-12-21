@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>AI Tools Integration</title>
+    <style>
+        /* NLP Tools Section */
+#nlp-tools {
+    background-color: #e8f5e9; /* Light green background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Spacing above and below */
+}
+
+#nlp-tools h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #388e3c; /* Dark green text */
+}
+
+.tool {
+    background-color: #ffffff; /* White card background */
+    border: 1px solid #c8e6c9; /* Light green border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* Rounded corners for the card */
+    overflow: hidden; /* Ensures content stays inside rounded corners */
+    margin: 10px 0; /* Spacing between cards */
+    display: flex;
+    align-items: center;
+}
+
+.tool img {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%; /* Circular image */
+    border: 2px solid #81c784; /* Green border around the image */
+}
+
+.tool-info {
+    padding: 10px;
+}
+
+.tool-info h3 {
+    margin: 0;
+    color: #388e3c; /* Dark green text */
+}
+
+.tool-info p {
+    margin: 5px 0 0;
+    color: #616161; /* Grey text */
+}
+/* Vision Tools Section */
+#vision-tools {
+    background-color: #e3f2fd; /* Light blue background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Spacing above and below */
+}
+
+#vision-tools h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1976d2; /* Blue text */
+}
+
+
+
+
+
+
+.tool-info h3 {
+    margin: 0;
+    color: #1976d2; /* Blue text */
+}
+
+
+#ml-tools {
+    background-color: #fff8e1; /* Light orange background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Spacing above and below */
+}
+
+#ml-tools h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff9800; /* Orange text */
+}
+
+.tool {
+    background-color: #ffffff; /* White card background */
+    border: 1px solid #ffe0b2; /* Light orange border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* Rounded corners for the card */
+    overflow: hidden; /* Ensures content stays inside rounded corners */
+    margin: 10px 0; /* Spacing between cards */
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* .tool-info {
+    padding: 10px;
+} */
+
+.tool-info h3 {
+    margin: 0;
+    color: #ff9800; /* Orange text */
+}
+
+.tool-info p {
+    margin: 5px 0 0;
+    color: #616161; /* Grey text */
+}
+/* Analytics Tools Section */
+#analytics-tools {
+    background-color: #f3e5f5; /* Light purple background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Spacing above and below */
+}
+
+#analytics-tools h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8e24aa; /* Purple text */
+}
+
+.tool {
+    background-color: #ffffff; /* White card background */
+    border: 1px solid #e1bee7; /* Light purple border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* Rounded corners for the card */
+    overflow: hidden; /* Ensures content stays inside rounded corners */
+    margin: 10px 0; /* Spacing between cards */
+    display: flex;
+    align-items: center;
+}
+
+.tool img {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%; /* Circular image */
+    border: 2px solid #ba68c8; /* Purple border around the image */
+}
+
+.tool-info {
+    padding: 10px;
+}
+
+.tool-info h3 {
+    margin: 0;
+    color: #8e24aa; /* Purple text */
+}
+
+.tool-info p {
+    margin: 5px 0 0;
+    color: #616161; /* Grey text */
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+    background: linear-gradient(to right, #4CAF50, #2E7D32); /* Green gradient background */
+    background-image: url(ravi.jpg);
+    color: lightgreen; /* White text for contrast */
+    text-align: center; /* Center-align the text */
+    padding: 30px 0; /* Add vertical padding for space */
+    font-family: 'Arial', sans-serif; /* Use Arial font for consistency */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 3rem; /* Increase font size for the heading */
+    letter-spacing: 1px; /* Add spacing between the letters */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for better readability */
+}
+
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .tool-category {
+            margin: 20px 0;
+            height: 50vh;
+        }
+
+        .tool-category h2 {
+            color: #4CAF50;
+        }
+
+        .tool {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+
+        .tool-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-info h3 {
+            margin: 0;
+        }
+
+        .tool-info p {
+            margin: 5px 0 0;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>AI Tools Integration Platform</h1>
+    </header>
+
+    <nav>   
+         <a href="#vision-tools" class="vision-tools">Computer Vision Tools</a>
+    <a href="#nlp-tools">NLP Tools</a>
+    <a href="#ml-tools" class="ml-tools">Machine Learning Tools</a>
+    <!-- <a href="#analytics-tools">Analytics Tools</a> -->
+</nav>
+
+
+    <main data-aos="zoom-out-up">
+        <!-- vision Tools Section -->
+<section  id="vision-tools" class="tool-category" style="background-color: #e8f5e9; padding: 20px; border-radius: 10px;" data-aos="fade-right">
+    <h2 style="text-align: center; margin-bottom: 20px; color: #388e3c;">Computer vision Tools</h2>
+    <div class="tool" style="background-color: #ffffff; border: 1px solid #c8e6c9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden; margin: 10px; display: flex; align-items: center;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkyWTqk1AuHAebL-zL1LktxkUZ6s0yulf40A&s" alt="Tool Icon" style="width: 60px; height: 60px; margin: 10px; border-radius: 50%; border: 2px solid #81c784;">
+       <a href="https://kamalakar5683.github.io/text2img/">
+            <h3 style="margin: 0; color: #388e3c;">Text to Image</h3>
+            <p style="margin: 5px 0 0; color: #616161;">An AI-powered conversational assistant.</p>
+        </div></a>
+    </div>
+    <div class="tool" style="background-color: #ffffff; border: 1px solid #c8e6c9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden; margin: 10px; display: flex; align-items: center;">
+        <img src="https://store-images.s-microsoft.com/image/apps.19484.14486917188820418.03d7ce31-d5eb-4bc3-ab4e-1914cd32123f.2af1413c-c1f9-4eb2-b011-0e622458e0d2" alt="Tool Icon" style="width: 60px; height: 60px; margin: 10px; border-radius: 50%; border: 2px solid #81c784;">
+        <a href="https://kamalakar5683.github.io/img2txt/">
+        <div class="tool-info" style="padding: 10px;">
+            <h3 style="margin: 0; color: #388e3c;">Image to Text</h3>
+            <p style="margin: 5px 0 0; color: #616161;">Seamless translation between multiple languages.</p>
+        </div></a>
+    </div>
+    <div class="tool" style="background-color: #ffffff; border: 1px solid #bbdefb; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden; margin: 10px; display: flex; align-items: center;">
+        <img src="https://play-lh.googleusercontent.com/DqAKd1qL2BikOj00_CbbVAQrYkektfO8BMUPqcePVnnpQup7taPWITgfSIVXV81p2I4" alt="Tool Icon" style="width: 60px; height: 60px; margin: 10px; border-radius: 50%; border: 2px solid #64b5f6;">
+        <a href="https://kamalakar5683.github.io/video-to-text/">
+        <div class="tool-info" style="padding: 10px;">
+            <h3 style="margin: 0; color: #1976d2;">Video to Text</h3>
+            <p style="margin: 5px 0 0; color: #616161;">Classify images into predefined categories.</p>
+        </div></a>
+    </div>
+</section>
+
+
+        <!--  nlp Tools Section -->
+<section id="nlp-tools" class="tool-category" style="background-color: #fff8e1; padding: 20px; border-radius: 10px;" data-aos="fade-right">
+    <h2 style="text-align: center; margin-bottom: 20px; color: #ff9800;">NLP Tools</h2>
+    <div class="tool" style="background-color: #ffffff; border: 1px solid #ffe0b2; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden; margin: 10px; display: flex; align-items: center;">
+        <img src="https://daxg39y63pxwu.cloudfront.net/images/blog/speech-emotion-recognition-project-using-machine-learning/Speech_Emotion_Recognition.webp" alt="Tool Icon" style="width: 60px; height: 60px; margin: 10px; border-radius: 50%; border: 2px solid #ffb74d;">
+        <a href="https://kamalakar5683.github.io/audio-emotion/">
+        <div class="tool-info" style="padding: 10px;">
+            <h3 style="margin: 0; color: #ff9800;">Speech emotion recognition</h3>
+            <p style="margin: 5px 0 0; color: #616161;">Speech emotion recognition</p>
+        </div></a>
+    </div>
+    <div class="tool" style="background-color: #ffffff; border: 1px solid #e1bee7; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden; margin: 10px; display: flex; align-items: center;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWBnLuyziTsvmzQotfTU8wG0WfXPSEFbCAWA&s">
+        <a href="https://kamalakar5683.github.io/speech-transcribe/">
+        <div class="tool-info" style="padding: 10px;">
+            <h3 style="margin: 0; color: #8e24aa;">Speech Transcribe</h3>
+            <p style="margin: 5px 0 0; color: #616161;">Create stunning visualizations from raw data.</p>
+        </div></a>
+    </div>
+    <div class="tool" style="background-color: #ffffff; border: 1px solid #ffe0b2; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden; margin: 10px; display: flex; align-items: center;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVxZF7E9T2R_8-yvYv-xgjAEiQANo6_2PxpA&s" alt="Tool Icon" style="width: 60px; height: 60px; margin: 10px; border-radius: 50%; border: 2px solid #ffb74d;">
+        <a href="https://kamalakar5683.github.io/text-emotion/">
+        <div class="tool-info" style="padding: 10px;">
+            <h3 style="margin: 0; color: #ff9800;">Text Classification</h3>
+            <p style="margin: 5px 0 0; color: #616161;">Automated machine learning for fast prototyping.</p>
+        </div></a>
+    </div>
+</section>
+
+        <!-- ml Tools Section -->
+<section  id="ml-tools" class="tool-category" style="background-color: #e3f2fd; padding: 20px; border-radius: 10px;" data-aos="fade-right">
+    <h2 style="text-align: center; margin-bottom: 20px; color: #1976d2;">Machine Learning Tools</h2>
+   
+    <div class="tool" style="background-color: #ffffff; border: 1px solid #bbdefb; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden; margin: 10px; display: flex; align-items: center;">
+        <img src="https://images.theconversation.com/files/284418/original/file-20190717-173334-1b9vdud.jpg?ixlib=rb-4.1.0&rect=0%2C350%2C6490%2C3240&q=45&auto=format&w=1356&h=668&fit=crop" alt="Tool Icon" style="width: 60px; height: 60px; margin: 10px; border-radius: 50%; border: 2px solid #64b5f6;">
+        <a href="https://kamalakar5683.github.io/fake-news-detection/">
+        <div class="tool-info" style="padding: 10px;">
+            <h3 style="margin: 0; color: #1976d2;">Fake news Detection</h3>
+            <p style="margin: 5px 0 0; color: #616161;">Detect objects in real-time using AI models.</p>
+        </div></a>
+    </div>
+    <div class="tool" style="background-color: #ffffff; border: 1px solid #e1bee7; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden; margin: 10px; display: flex; align-items: center;">
+        <img src="https://www.shutterstock.com/shutterstock/photos/2242235005/display_1500/stock-photo-businessman-touching-the-brain-working-of-artificial-intelligence-ai-automation-predictive-2242235005.jpg" alt="Tool Icon" style="width: 60px; height: 60px; margin: 10px; border-radius: 50%; border: 2px solid #ba68c8;">
+        <a href="https://kamalakar5683.github.io/ques2math/">
+        <div class="tool-info" style="padding: 10px;">
+            <h3 style="margin: 0; color: #8e24aa;">Question to Math</h3>
+            <p style="margin: 5px 0 0; color: #616161;">Predict trends and insights from historical data.</p>
+        </div></a>
+        
+    </div>
+</section>
+
+
+        <!-- Analytics Tools Section -->
+<!-- <section id="analytics-tools" class="tool-category" style="background-color: #f3e5f5; padding: 20px; border-radius: 10px;" data-aos="fade-right">
+    <h2 style="text-align: center; margin-bottom: 20px; color: #8e24aa;">Analytics Tools</h2>
+   
+   
+    
+</section> -->
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AI Integration Team. All Rights Reserved.</p>
+    </footer>
+    <script>
+        AOS.init();
+      </script>
+</body>
+
+</html>
